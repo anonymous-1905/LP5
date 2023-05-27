@@ -8,6 +8,9 @@ from sklearn import preprocessing
 from sklearn import metrics
 # Load the ocr dataset
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
+plt.imshow(x_train[0],cmap='gray')
+plt.show()
+print(x_train[0])
 print("X_train shape", x_train.shape)
 print("y_train shape", y_train.shape)
 print("X_test shape", x_test.shape)
