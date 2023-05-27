@@ -105,8 +105,8 @@ int main() {
     
     cout <<endl;
 
-    cout << "Sequential Time: " << seqDuration << " seconds" <<endl;
-    cout << "Parallel Time: " << parallelDuration << " seconds" <<endl;
+    cout << "Sequential DFS Time: " << seqDuration << " seconds" <<endl;
+    cout << "Parallel DFS Time: " << parallelDuration << " seconds" <<endl;
     
 /*
 
