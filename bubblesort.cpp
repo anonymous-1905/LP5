@@ -53,8 +53,11 @@ int main() {
         //arr[i]=rand() % 100;
     }
     
-    int* arr1;
-    arr1=arr;
+    int* arr1=new int[n];
+    for(int i=0;i<n;i++)
+    {
+	    arr1[i]=arr[i];
+    }
     
     // Measure the performance of sequential bubble sort
     double startSeq = omp_get_wtime();
