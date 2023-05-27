@@ -85,8 +85,11 @@ int main()
 		cout<<num[i]<<" ";
 	}
 	
-	int* num1;
-	num1=num;
+	int* num1=new int[n];
+	for(int i=0;i<n;i++)
+	{
+		num1[i]=num[i];
+	}
 	
 	// Measure the performance of sequential merge sort
     	double startTime = omp_get_wtime();
