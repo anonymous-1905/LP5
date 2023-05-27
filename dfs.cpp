@@ -105,8 +105,8 @@ int main() {
     
     cout <<endl;
 
-    cout << "Sequential Bubble Sort Time: " << seqDuration << " seconds" <<endl;
-    cout << "Parallel Bubble Sort Time: " << parallelDuration << " seconds" <<endl;
+    cout << "Sequential Time: " << seqDuration << " seconds" <<endl;
+    cout << "Parallel Time: " << parallelDuration << " seconds" <<endl;
     
 /*
 
