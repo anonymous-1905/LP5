@@ -9,16 +9,12 @@ void dfs_sequential(int **edges,int v,int sv,int* visitedv)
 	visitedv[sv]=1;
 	for(int i=0;i<v;i++)
 	{
-		if(i==sv)
+		if(i==sv || visitedv[i]==1)
 		{
 			continue;
 		}
 		if(edges[sv][i]==1)
-		{
-			if(visitedv[i]==1)
-			{
-				continue;
-			}	
+		{	
 			dfs_sequential(edges,v,i,visitedv);
 		}
 	}
@@ -31,16 +27,12 @@ void dfs_parallel(int **edges,int v,int sv,int* visitedv)
 	#pragma omp parallel for
 	for(int i=0;i<v;i++)
 	{
-		if(i==sv)
+		if(i==sv || visitedv[i]==1)
 		{
 			continue;
 		}
 		if(edges[sv][i]==1)
-		{
-			if(visitedv[i]==1)
-			{
-				continue;
-			}	
+		{	
 			dfs_parallel(edges,v,i,visitedv);
 		}
 	}
@@ -99,7 +91,13 @@ int main() {
     //Measure the performance of parallel dfs
     cout<<"\nparallel dfs"<<endl;
     double startParallel = omp_get_wtime();
-    dfs_parallel(graph, numNodes, 0, visited);
+    #pragma omp parallel
+    {
+        #pragma omp single
+        {
+            dfs_parallel(graph, numNodes, 0, visited);
+        }
+    }
     double endParallel = omp_get_wtime();
     double parallelDuration = endParallel - startParallel;
     
