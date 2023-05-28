@@ -35,6 +35,7 @@ int min_val(int a1[], int n)
 int sum_val(int a1[], int n)
 {
 	int sum=0;
+	#pragma omp parallel for reduction(+:sum)
 	for (int i = 0; i < n; i++) 
 	{
 		#pragma omp critical
