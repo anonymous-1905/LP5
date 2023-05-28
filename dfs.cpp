@@ -105,16 +105,7 @@ int main() {
 
     cout << "Sequential DFS Time: " << seqDuration << " seconds" <<endl;
     cout << "Parallel DFS Time: " << parallelDuration << " seconds" <<endl;
-    
-/*
 
-    // Clean up dynamically allocated memory
-    for (int i = 0; i < numNodes; i++) {
-        delete[] graph[i];
-    }
-    delete[] graph;
-    delete[] visited;
-*/
     return 0;
 }
 
